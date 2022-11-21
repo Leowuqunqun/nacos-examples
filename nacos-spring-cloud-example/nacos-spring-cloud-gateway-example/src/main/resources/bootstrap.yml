@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: nacos-scg
+  cloud:
+    #Nacos
+    nacos:
+      discovery:
+        namespace: ${NACOS_NAMESPACE}
+        server-addr: ${NACOS_SERVER_ADDR}
+        ip: nacos-scg  # 默认基于IP，如果你希望让k8s做负载均衡，可以选择服务名注册 | The default is based on IP. If you want to let k8s do load balancing, you can choose the service name to register
+      config:
+        namespace: ${NACOS_NAMESPACE}
+        server-addr: ${NACOS_SERVER_ADDR}
+        file-extension: yaml
+        shared-configs[0]:
+          data-id: common.yaml # 共享 dataId | shared dataId
+          group: DEFAULT_GROUP   # 默认为DEFAULT_GROUP,可以省略 | Default is DEFAULT_GROUP, can be omitted
+          refresh: false   # 动态刷新，默认为false 可以省略 | Dynamic refresh, the default is false and can be omitted

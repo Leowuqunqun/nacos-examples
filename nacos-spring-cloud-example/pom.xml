@@ -26,6 +26,7 @@
         <module>nacos-spring-cloud-config-example</module>
         <module>nacos-spring-cloud-config-multi-data-ids-example</module>
         <module>nacos-spring-cloud-discovery-example</module>
+        <module>nacos-spring-cloud-gateway-example</module>
     </modules>
 
     <dependencyManagement>
